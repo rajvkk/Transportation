@@ -6,8 +6,6 @@ gem 'rails', '4.2.3'
 
 gem 'rails-api'
 
-gem 'devise'
-
 gem 'spring', :group => :development
 
 gem 'jbuilder'
@@ -19,6 +17,7 @@ group :development, :test do
   gem 'rails-perftest'
   gem 'ruby-prof'
   gem 'pry'
+  gem 'devise'
 end
 
 # Use ActiveModel has_secure_password
