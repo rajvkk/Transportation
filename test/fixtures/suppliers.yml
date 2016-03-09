@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  store_id: 1
+  warehouse_id: MyString
+  supplier_name: MyString
+  contact_number: MyString
+
+two:
+  store_id: 1
+  warehouse_id: MyString
+  supplier_name: MyString
+  contact_number: MyString
