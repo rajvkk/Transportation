@@ -1,0 +1,2 @@
+class SupplierController < ApiController
+end

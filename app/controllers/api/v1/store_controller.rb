@@ -1,0 +1,2 @@
+class StoreController < ApiController
+end
