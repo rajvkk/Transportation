@@ -5,12 +5,13 @@ class ApiController < ActionController::Base
 	def authenticate
 		@user = User.find_by_api_key(params[:api_key])
 		
-		if @user.exists?
+		if @user
+			true
+		else
 			respond_to do |format|
-			  format.json { render json: @user.to_json, status: 200 }
+			  format.json { render json: { error: "Unauthorized user", status: 401 } }
 			end
 		end
-
 	end
 
 end
