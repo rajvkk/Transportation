@@ -8,9 +8,7 @@ class ApiController < ActionController::Base
 		if @user
 			true
 		else
-			respond_to do |format|
-			  format.json { render json: { error: "Unauthorized user", status: 401 } }
-			end
+			render json: { errors: "Unauthorized user", status: 401 }
 		end
 	end
 
