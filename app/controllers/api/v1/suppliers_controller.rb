@@ -14,9 +14,9 @@ class Api::V1::SuppliersController < ApiController
 		@supplier = Supplier.new(supplier_params)
 
 		if @supplier.save
-			render json: @supplier, status: 200, location: @supplier
+			render json: @supplier, status: :created
 		else
-			render json: @supplier.errors, status: 422
+			render json: @supplier.errors, status: :unprocessable_entity
 		end
 	end
 
@@ -28,7 +28,7 @@ class Api::V1::SuppliersController < ApiController
 	private
 
 	def supplier_params
-		params.require(:supplier).permit(:name, :contact_number)
+		params.require(:supplier).permit(:name, :contactnumber)
 	end
 
 end

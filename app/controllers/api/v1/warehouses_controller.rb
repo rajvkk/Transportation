@@ -14,9 +14,9 @@ class Api::V1::WarehousesController < ApiController
 		@warehouse = Warehouse.new(warehouse_params)
 
 		if @warehouse.save
-			render json: @warehouse, status: 200
+			render json: @warehouse, status: :created
 		else
-			render json: @warehouse.errors, status: 422
+			render json: @warehouse.errors, status: :unprocessable_entity
 		end
 	end
 
