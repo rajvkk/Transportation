@@ -1,9 +1,9 @@
 class CreateSuppliers < ActiveRecord::Migration
   def change
     create_table :suppliers do |t|
-      t.integer :store_id
-      t.string :warehouse_id
-      t.string :supplier_name
+			t.belongs_to :store
+      t.belongs_to :warehouse
+      t.string :name
       t.string :contact_number
 
       t.timestamps null: false

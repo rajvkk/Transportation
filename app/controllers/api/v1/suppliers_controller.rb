@@ -3,10 +3,10 @@ class Api::V1::SuppliersController < ApiController
 	before_action :authenticate
 
 	def index
-		@supplier = Supplier.all
+		@suppliers = Supplier.all
 		
 		respond_to do |format|
-			format.json { render json: @supplier }
+			format.json { render json: @suppliers }
 		end
 	end
 
@@ -20,10 +20,15 @@ class Api::V1::SuppliersController < ApiController
 		end
 	end
 
+	def show
+    @supplier = Supplier.find(params[:id])
+    render json: @supplier, status: 200
+	end
+
 	private
 
 	def supplier_params
-		params.require(:supplier).permit(:supplier_name, :supplier_location)
+		params.require(:supplier).permit(:name, :contact_number)
 	end
 
 end

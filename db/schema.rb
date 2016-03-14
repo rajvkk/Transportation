@@ -14,8 +14,8 @@
 ActiveRecord::Schema.define(version: 20160310160348) do
 
   create_table "stores", force: :cascade do |t|
-    t.string   "store_name"
-    t.string   "store_location"
+    t.string   "name"
+    t.string   "location"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 20160310160348) do
   create_table "suppliers", force: :cascade do |t|
     t.integer  "store_id"
     t.string   "warehouse_id"
-    t.string   "supplier_name"
-    t.string   "contact_number"
+    t.string   "name"
+    t.string   "number"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
@@ -32,25 +32,14 @@ ActiveRecord::Schema.define(version: 20160310160348) do
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
     t.string   "api_key"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
   create_table "warehouses", force: :cascade do |t|
-    t.string   "warehouse_name"
-    t.string   "warehouse_location"
+    t.string   "name"
+    t.string   "location"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end

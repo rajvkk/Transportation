@@ -1,8 +1,8 @@
 class CreateStores < ActiveRecord::Migration
   def change
     create_table :stores do |t|
-      t.string :store_name
-      t.string :store_location
+      t.string :name
+      t.string :location
 
       t.timestamps null: false
     end
