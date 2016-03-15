@@ -3,6 +3,15 @@
 
 This document describes the Transportation REST API, which allows users to achieve most tasks that can be done from the web UI programmatically. The API accepts JSON and form encoded content as input. The output is always in JSON format.
 
+**AUTHENTICATION:**
+-----------
+
+Our REST APIs support token authentication. Only an account administrator can access or generate API key tokens.
+
+Here's a sample curl request that is authenticated using the API key token.
+
+```curl -H "Content-type: application/json" -H "Authorization: Token api_key=7ug68Q6zutSvzQUTevugvv" http://localhost:3000/api/v1/stores```
+
 **Show Stores**
 ------
 
@@ -20,7 +29,12 @@ Returns json data for list of stores.
 
 	**Required**
 
-	**Optional**
+		/stores
+
+  **Optional**
+
+    /stores/`id`
+
 
 * **Success Response**
 
@@ -37,10 +51,3 @@ Returns json data for list of stores.
 	```curl -X GET http://localhost:3000/api/v1/stores```
 
 
-Authentication:
-
-Our REST APIs support token authentication. Only an account administrator can access or generate API key tokens.
-
-Here's a sample curl request that is authenticated using the API key token.
-
-curl -H "Content-type: application/json" -H "Authorization: Token api_key=7ug68Q6zutSvzQUTevugvv" http://localhost:3000/api/v1/stores
