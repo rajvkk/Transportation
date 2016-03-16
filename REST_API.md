@@ -24,7 +24,7 @@ Returns json data for list of stores.
 
 * **URL**
 
-   /stores
+   `api/v1/stores?api_key=`
 
 * **Method:**
 
@@ -34,11 +34,11 @@ Returns json data for list of stores.
 
 	**Required**
 
-		/stores
+		`api/v1/stores?api_key=`
 
   **Optional**
 
-    `/stores/:id.json`
+    `api/v1/stores/:id.json?api_key=`
 
 
 * **Success Response**
