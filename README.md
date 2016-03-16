@@ -28,7 +28,7 @@ $ rails s
 The app should now be available at [http://localhost:3000/](http://localhost:3000/).
 
 
-* Configuration
+*Configuration*
 
 In order to access the application bound to rest api, a user has to be authenticated (should have an api key)
 
@@ -42,7 +42,7 @@ $ rails c
 > @user = User.create(email: "example@gmail.com", password: "1234", password_confirmation: "1234")
 ```
 
-** To Log in as authenticated user, run rails s and use these url in the browser:**
+**To Log in as authenticated user, run rails s and use these url in the browser:**
 	
 	 http://localhost:3000/api/v1/stores?api_key=""
 
