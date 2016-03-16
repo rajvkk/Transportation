@@ -4,20 +4,21 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 
-gem 'rails-api'
-
 gem 'spring', :group => :development
 
 gem 'jbuilder'
 gem 'oj'
 gem 'sqlite3'
 
-group :development, :test do
+
+gem 'pry'
+gem 'devise'
+
+
+group :test do
   gem 'rspec-rails'
-  gem 'rails-perftest'
-  gem 'ruby-prof'
-  gem 'pry'
-  gem 'devise'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
 end
 
 # Use ActiveModel has_secure_password

@@ -4,7 +4,6 @@ class Api::V1::StoresController < ApiController
 
 	def index
 		@stores = Store.all
-		
 		respond_to do |format|
 			format.json { render json: @stores }
 		end
@@ -12,19 +11,17 @@ class Api::V1::StoresController < ApiController
 
 	def create
 		@store = Store.new(store_params)
-
 		if @store.save
 			render json: @store, status: :created
 		else
-			render json: @store.errors, status: :unprocessable_entity
+			render json: @store.errors, status: 422
 		end
-	end
+  end
 
-	def show
+  def show
     @store = Store.find(params[:id])
     render json: @store, status: 200
-	end
-
+  end
 
 	private
 

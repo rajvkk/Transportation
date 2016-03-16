@@ -16,15 +16,14 @@ class Api::V1::WarehousesController < ApiController
 		if @warehouse.save
 			render json: @warehouse, status: :created
 		else
-			render json: @warehouse.errors, status: :unprocessable_entity
+			render json: @warehouse.errors, status: 422
 		end
-	end
+  end
 
-	def show
+  def show
     @warehouse = Warehouse.find(params[:id])
     render json: @warehouse, status: 200
   end
-
 
 	private
 
